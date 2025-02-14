@@ -25,21 +25,25 @@ public class Program2 {
 		for (Department obj : list) {
 			System.out.println(obj);
 		}
-//		
-//		System.out.println("\n=== TESTE 3: Seller insert === ");
-//		
-//		System.out.println("Inserted! New id = " + newSeller.getId());
-//		
-//		
-//		
-//		System.out.println("\n=== TESTE 4: Seller update === ");
-//		
-//		System.out.println("Update completed!");
-//		
-//		
-//		System.out.println("\n=== TESTE 5: Seller delete === ");
-//		System.out.print("Enter id for delete: ");
-//		
+		
+		System.out.println("\n=== TESTE 3: Department insert === ");
+		Department newDepartment = new Department(null, "Sport");
+		departmentDao.insert(newDepartment);
+		System.out.println("Inserted! New id = " + newDepartment.getId());
+		
+		
+		System.out.println("\n=== TESTE 4: Department update === ");
+		department = departmentDao.findById(1);
+		department.setName("Computers");
+		departmentDao.update(department);
+		System.out.println("Update completed!");
+		
+		
+		System.out.println("\n=== TESTE 5: Department delete === ");
+		System.out.print("Enter id for delete: ");
+		int id = sc.nextInt();
+		departmentDao.deleteById(id);
+		System.out.println("Delete completed");
 		
 		
 		sc.close();
